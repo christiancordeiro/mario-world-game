@@ -153,6 +153,7 @@ header#cabecalho-principal {
   #nome-jogo {
     font-size: 18px;
     margin-right: 0px;
+    margin-left: 40px;
   }
 
   #corpo {
