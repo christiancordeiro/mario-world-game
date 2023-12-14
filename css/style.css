@@ -34,7 +34,7 @@ header#cabecalho-principal {
 #pontuacao-game::before {
   content: "";
   display: inline-block;
-  background-image: url("/img/moeda.png");
+  background-image: url("../img/moeda.png");
   background-position: no-repeat;
   background-size: contain;
   width: 20px;
@@ -59,6 +59,10 @@ header#cabecalho-principal {
   align-items: center;
   width: 60%;
   color: #fff;
+}
+
+#corpo #esquerda h3 {
+  text-align: center;
 }
 
 #corpo #esquerda #cor-atual {
@@ -137,6 +141,10 @@ header#cabecalho-principal {
 }
 
 @media (max-width: 525px) {
+  header#cabecalho-principal {
+    height: 50px;
+  }
+
   #pontuacao-game {
     padding: 5px 23px;
     font-size: 14px;
@@ -144,6 +152,7 @@ header#cabecalho-principal {
 
   #nome-jogo {
     font-size: 18px;
+    margin-right: 0px;
   }
 
   #corpo {
@@ -153,10 +162,6 @@ header#cabecalho-principal {
 
   #corpo #esquerda {
     width: 50%;
-  }
-
-  #corpo #esquerda h3 {
-    text-align: center;
   }
 
   #corpo #esquerda #cor-atual {
