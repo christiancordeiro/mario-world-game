@@ -157,6 +157,7 @@ header#cabecalho-principal {
   }
 
   #corpo {
+    margin: 30px 15px 0px;
     flex-direction: column;
     align-items: center;
   }
@@ -166,11 +167,8 @@ header#cabecalho-principal {
   }
 
   #corpo #esquerda #cor-atual {
-    margin-top: 20px;
     height: 150px;
     width: 150px;
-    border: 10px solid black;
-    border-radius: 15px;
   }
 
   #btn-responder {
