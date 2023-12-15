@@ -22,6 +22,9 @@ let engine = {
   moedas: 0,
 }
 
+const audioMoeda = new Audio("/audios/moeda.mp3")
+const audioErrou = new Audio("/audios/errou.mp3")
+
 function sortearCor() {
   let indexCorSorteada = Math.floor(
     Math.floor(Math.random() * engine.cores.length)
@@ -42,4 +45,16 @@ function aplicarCorNaCaixa(nomeDaCor) {
   coresDaCaixa.style.backgroundSize = "100%"
 }
 
+function atualizaPontuacao(valor) {
+  let pontuacao = document.getElementById("pontuacao-atual")
 
+  engine.moedas += valor
+
+  if (valor < 0) {
+    audioErrou.play()
+  } else {
+    audioMoeda.play()
+  }
+
+  pontuacao.innerText = engine.moedas
+}
