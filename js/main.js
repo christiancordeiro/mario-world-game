@@ -22,8 +22,8 @@ let engine = {
   moedas: 0,
 }
 
-const audioMoeda = new Audio("/audios/moeda.mp3")
-const audioErrou = new Audio("/audios/errou.mp3")
+const audioMoeda = new Audio("../moeda.mp3")
+const audioErrou = new Audio("../errou.mp3")
 
 function sortearCor() {
   let indexCorSorteada = Math.floor(
