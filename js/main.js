@@ -105,7 +105,7 @@ if (window.SpeechRecognition || window.webkitSpeechRecognition) {
     aplicarCorNaCaixa(sortearCor())
   }
 } else {
-  alert("não tem suporte")
+  alert("Navegador não tem suporte pra reconhecimento de voz")
 }
 
 btn.addEventListener("click", function (e) {
