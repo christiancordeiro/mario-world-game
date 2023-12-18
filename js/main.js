@@ -10,14 +10,14 @@ let engine = {
     "black",
   ],
   hexadecimais: {
-    green: "#02F00",
+    green: "#41E137",
     purple: "#790093",
     pink: "#F02A7E",
     red: "#E90808",
     yellow: "#E7D703",
     black: "#141414",
     orange: "#F16529",
-    grey: "#EBEBEB",
+    grey: "#808080",
   },
   moedas: 0,
 }
@@ -58,3 +58,56 @@ function atualizaPontuacao(valor) {
 
   pontuacao.innerText = engine.moedas
 }
+
+aplicarCorNaCaixa(sortearCor())
+
+//API DE RECONHECIMENTO DE VOZ
+
+const btn = document.getElementById("btn-responder")
+let transcricaoAudio = ""
+let gravador
+let respostaCorreta = ""
+
+if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+  const speechAPI = window.SpeechRecognition || window.webkitSpeechRecognition
+  gravador = new speechAPI()
+
+  gravador.continuos = false
+  gravador.lang = "eng-US"
+
+  gravador.onstart = function () {
+    btn.innerText = "Estou ouvindo"
+    btn.style.backgroundColor = "white"
+    btn.style.color = "black"
+  }
+
+  gravador.onend = function () {
+    btn.innerText = "Responder"
+    btn.style.backgroundColor = "transparent"
+    btn.style.color = "white"
+  }
+
+  gravador.onresult = function (event) {
+    transcricaoAudio = event.results[0][0].transcript.toUpperCase()
+    respostaCorreta = document
+      .getElementById("cor-na-caixa")
+      .innerText.toUpperCase()
+
+    if (transcricaoAudio === respostaCorreta) {
+      atualizaPontuacao(1)
+    } else {
+      atualizaPontuacao(-1)
+    }
+
+    console.log(transcricaoAudio)
+    console.log(respostaCorreta)
+
+    aplicarCorNaCaixa(sortearCor())
+  }
+} else {
+  alert("não tem suporte")
+}
+
+btn.addEventListener("click", function (e) {
+  gravador.start()
+})
