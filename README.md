@@ -14,7 +14,7 @@ Os usuários devem ser capazes de:
 - Responder em inglês
 
 ## Sobre o desafio
-O desafio trata-se de um jogo onde o objetivo é acertar as cores que aparece no bloco, o papel do jogador é clicar no botão, onde o microfone será ligado e responder em INGLÊS se ele responder corretamente apitará um áudio e será pontuado. Se errar, outro áudio será reproduzido onde ele perderá pontos pelo erro.
+O desafio trata-se de um jogo onde o objetivo é acertar as cores que aparece no bloco, o papel do jogador é clicar no botão, onde o microfone será ligado e a resposta DEVE SER em INGLÊS. Se a resposta for correta apitará um áudio e será pontuado com +1. Caso a resposta seja incorreta, outro áudio será reproduzido onde ele perderá pontos pelo erro.
 
 
 ## Criado com
